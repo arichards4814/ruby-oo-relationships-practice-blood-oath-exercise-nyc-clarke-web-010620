@@ -1,6 +1,6 @@
 class Follower
 
-    attr_accessor :life_motto
+    attr_accessor :life_motto, :followers_hash
     attr_reader :name, :age
 
     @@all = []
@@ -49,12 +49,47 @@ end
 slogans   
 end 
 
+# def followers_hash
+#     followers_hash = {}
+
+#     Cult.all.each do |cult|
+#         cult.followers.each do |follower|
+#             # binding.pry
+#             if !followers_hash[follower.name]
+#                 followers_hash[follower.name] =  1
+                
+#             else
+#                 followers_hash[follower.name] += 1
+#             end
+#         end
+#     end
+
+# end 
+
 def self.most_active
     followers_hash = {}
 
     Cult.all.each do |cult|
         cult.followers.each do |follower|
-            binding.pry
+            if !followers_hash[follower.name]
+                followers_hash[follower.name] =  1
+            else
+                followers_hash[follower.name] += 1
+            end
+        end
+    end
+
+    best_follower = followers_hash.max_by {|k,v| v}
+    best_follower_name = best_follower[0]
+    @@all.find{|follower| follower.name == best_follower_name}
+end 
+
+def self.top_ten
+        followers_hash = {}
+
+    Cult.all.each do |cult|
+        cult.followers.each do |follower|
+            # binding.pry
             if !followers_hash[follower.name]
                 followers_hash[follower.name] =  1
                 
@@ -64,20 +99,18 @@ def self.most_active
         end
     end
 
-    binding.pry
-    
+        top_ten_followers = []
+        count = 0 
+        while count < 10 
+            best_follower = followers_hash.max_by {|k,v| v}
+            best_follower_name = best_follower[0]
+            best_follower_instance = @@all.find{|follower| follower.name == best_follower_name}
+            top_ten_followers << best_follower_instance
+            followers_hash.delete(best_follower_name)
+            count += 1 
+        end 
+            binding.pry
+        
 
-    # follower_hash.each do |k,v|
-    #     if !most_active
-    #         most_active = new_hash[k] => [v]
-    #     elsif v > most_active[k]
-
-    #     end
-    # end
-
-
-
-    #return follower
-end 
-
+end
 end
