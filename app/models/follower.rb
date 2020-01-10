@@ -37,4 +37,11 @@ def self.of_a_certain_age(age)
     end
 end
 
+def my_cult_slogans
+    my_cults = Cult.all.select {|cult| cult.followers == self}
+    my_slogans = my_cults.map{|cults| cults.slogan}
+    binding.pry
+    return my_slogans
+end 
+
 end

@@ -7,9 +7,9 @@ end
 # This is a convenient place to define variables and/or set up new object instances,
 # so they will be available to test and play around with in your console
 
-cult1 = Cult.new("name1", "location", "founding_year", "slogan")
-cult2 = Cult.new("name2", "location", "founding_year", "slogan")
-cult3 = Cult.new("name3", "location", "founding_year", "slogan")
+cult1 = Cult.new("name1", "location1", "founding_year", "slogannnnnn")
+cult2 = Cult.new("name2", "location2", "founding_year", "HELLOOOO")
+cult3 = Cult.new("name3", "location1", "founding_year", "GOODBYE")
 # cult4 = Cult.new("name3", "location", "founding_year", "slogan")
 follower1 = Follower.new("John",22,"Happy to be here...")
 follower2= Follower.new("Freddy",74,"Not happy to be here...")
@@ -31,6 +31,9 @@ check3 = cult1.my_followers_mottos
 
 check4 = Cult.least_popular
 
+check5 = Cult.most_common_location 
+
+check6 = follower1.my_cult_slogans
 
 
 #cults = follower1.cults
