@@ -10,12 +10,14 @@ end
 cult1 = Cult.new("name1", "location", "founding_year", "slogan")
 cult2 = Cult.new("name2", "location", "founding_year", "slogan")
 cult3 = Cult.new("name3", "location", "founding_year", "slogan")
-cult4 = Cult.new("name3", "location", "founding_year", "slogan")
+# cult4 = Cult.new("name3", "location", "founding_year", "slogan")
 follower1 = Follower.new("John",22,"Happy to be here...")
 follower2= Follower.new("Freddy",74,"Not happy to be here...")
+follower3= Follower.new("Steve",80,"Not happy to be here...")
 
 bloodoath1 = BloodOath.new("1992-06-06", cult1, follower1)
 bloodoath2 = BloodOath.new("1992-07-06", cult3, follower1)
+bloodoath2 = BloodOath.new("1992-07-06", cult1, follower3)
 
 ##tests##
 
@@ -24,6 +26,10 @@ follower2.join_cult(cult1)
 check = cult1.followers
 
 check2 = Follower.of_a_certain_age(50)
+
+check3 = cult1.my_followers_mottos
+
+check4 = Cult.least_popular
 
 
 
