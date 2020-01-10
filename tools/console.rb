@@ -33,7 +33,7 @@ check6 = follower1.my_cult_slogans
 check7 = Follower.most_active
 
 
-#cults = follower1.cults
+# cults = follower1.cults
 # john = Cult.find_by_name("name1")
 # puts john
 # newcult = Cult.find_by_location("location")
