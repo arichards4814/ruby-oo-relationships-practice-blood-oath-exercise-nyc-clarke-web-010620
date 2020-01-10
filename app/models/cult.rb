@@ -71,4 +71,6 @@ class Cult
         end
         lowest_cult
     end
+
+    
 end
