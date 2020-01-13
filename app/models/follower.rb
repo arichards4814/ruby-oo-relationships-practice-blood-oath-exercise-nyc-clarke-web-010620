@@ -24,11 +24,15 @@ def cults
     our_cults = arr.map do |ele|
         ele.cult
     end
-    our_cults
+    our_cults.uniq
 end
 
 def join_cult(cult)
-    cult.recruit_follower(self)
+    if cult.minimum_age > self.age 
+        "Sorry, you are too young to join!"
+    else 
+        cult.recruit_follower(self)
+    end 
 end
 
 def self.of_a_certain_age(age)
@@ -67,7 +71,7 @@ def self.most_active
     @@all.find{|follower| follower.name == best_follower_name}
 end 
 
-def self.top_ten
+    def self.top_ten
         followers_hash = {}
 
     Cult.all.each do |cult|
@@ -96,5 +100,15 @@ def self.top_ten
         top_ten_followers
         
 
-end
+    end
+
+    def fellow_cult_members
+        cult_members = []
+        cults.each do |cult| 
+            cult.followers.each do |follower|
+                cult_members << follower
+            end 
+        end 
+        cult_members.uniq
+    end
 end

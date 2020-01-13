@@ -1,21 +1,26 @@
 class Cult
 
     attr_accessor :location, :slogan, :followers
-    attr_reader :name, :founding_year
+    attr_reader :name, :founding_year, :minimum_age 
 
     @@all = []
     
-    def initialize(name, location, founding_year, slogan)
+    def initialize(name, location, founding_year, slogan, minimum_age)
         @name = name
         @location = location
         @founding_year = founding_year
         @slogan = slogan
+        @minimum_age = minimum_age
         @followers = []
         @@all << self
     end
 
     def recruit_follower(follower)
-        @followers << follower
+        if follower.age < minimum_age
+           "Sorry, you are too young to join!"
+        else 
+           @followers << follower
+        end 
     end
 
     def cult_population
@@ -76,14 +81,5 @@ class Cult
         locations = @@all.map {|cult| cult.location}
         most_common = locations.max_by { |cult| locations.count(cult) }
     end 
-    #     most_common_location = nil
-    #     @@all.each do |cult|
-    #         if !most_common_location 
-    #             most_common_location = cult 
-    #         elsif cult.location.count > most_common_location.count 
-    #             most_common_location = cult 
-    #         end 
-    #     end 
-    #     most_common_location
-    # end 
+    
 end
