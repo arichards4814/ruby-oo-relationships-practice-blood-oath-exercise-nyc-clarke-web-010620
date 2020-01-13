@@ -49,23 +49,6 @@ end
 slogans   
 end 
 
-# def followers_hash
-#     followers_hash = {}
-
-#     Cult.all.each do |cult|
-#         cult.followers.each do |follower|
-#             # binding.pry
-#             if !followers_hash[follower.name]
-#                 followers_hash[follower.name] =  1
-                
-#             else
-#                 followers_hash[follower.name] += 1
-#             end
-#         end
-#     end
-
-# end 
-
 def self.most_active
     followers_hash = {}
 
@@ -109,7 +92,8 @@ def self.top_ten
             followers_hash.delete(best_follower_name)
             count += 1 
         end 
-            binding.pry
+
+        top_ten_followers
         
 
 end

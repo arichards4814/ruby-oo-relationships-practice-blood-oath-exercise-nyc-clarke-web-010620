@@ -25,19 +25,19 @@ follower9 = Follower.new("bob",22,"Happy to be here...")
 follower10= Follower.new("sam",74,"Not happy to be here...")
 follower11= Follower.new("chris",80,"Not happy to be here...")
 
-bloodoath = BloodOath.new("2000-08-09", cult1, follower1)
-bloodoath1 = BloodOath.new("2000-08-09", cult1, follower2)
-bloodoath2 = BloodOath.new("2000-08-09", cult1, follower3)
-bloodoath3 = BloodOath.new("2000-08-09", cult1, follower4)
-bloodoath4 = BloodOath.new("2000-08-09", cult1, follower5)
-bloodoath5 = BloodOath.new("2000-08-09", cult1, follower6)
-bloodoath6 = BloodOath.new("2000-08-09", cult1, follower7)
-bloodoath7 = BloodOath.new("2000-08-09", cult1, follower8)
+bloodoath = BloodOath.new("2008-08-09", cult1, follower1)
+bloodoath1 = BloodOath.new("2001-08-09", cult1, follower2)
+bloodoath2 = BloodOath.new("2002-08-09", cult1, follower3)
+bloodoath3 = BloodOath.new("2003-08-09", cult1, follower4)
+bloodoath4 = BloodOath.new("2004-08-09", cult1, follower5)
+bloodoath5 = BloodOath.new("2005-08-09", cult1, follower6)
+bloodoath6 = BloodOath.new("2006-08-09", cult1, follower7)
+bloodoath7 = BloodOath.new("2007-08-09", cult1, follower8)
 bloodoath8 = BloodOath.new("2000-08-09", cult1, follower9)
-bloodoath9 = BloodOath.new("2000-08-09", cult1, follower10)
-bloodoath10 = BloodOath.new("2000-08-09", cult2, follower1)
-bloodoath11 = BloodOath.new("2000-08-09", cult2, follower2)
-bloodoath12 = BloodOath.new("2000-08-09", cult3, follower1)
+bloodoath9 = BloodOath.new("2009-08-09", cult1, follower10)
+bloodoath10 = BloodOath.new("2010-08-09", cult2, follower1)
+bloodoath11 = BloodOath.new("2011-08-09", cult2, follower2)
+bloodoath12 = BloodOath.new("2012-08-09", cult3, follower1)
 
 # bloodoath1 = BloodOath.new(“1992-06-06”, cult1, follower1)
 # bloodoath2 = BloodOath.new(“1993-06-06”, cult3, follower2)
@@ -68,6 +68,7 @@ check5 = Cult.most_common_location
 check6 = follower1.my_cult_slogans
 check7 = Follower.most_active
 check10 = Follower.top_ten
+check11 = BloodOath.first_oath
 
 
 # cults = follower1.cults

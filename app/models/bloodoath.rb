@@ -20,6 +20,13 @@ class BloodOath
         @@all
     end
 
+    def self.first_oath
+        array_of_dates_sorted = @@all.map{|blood_oath| blood_oath.initiation_date.split("-")}.sort
+        first_date_year = array_of_dates_sorted[0][0]
+        blood_oath = @@all.find{|bloodoath| bloodoath.initiation_date.split("-")[0] == first_date_year}
+        blood_oath.follower
+    end 
+
 
 
 end
